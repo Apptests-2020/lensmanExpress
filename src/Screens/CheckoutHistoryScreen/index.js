@@ -49,25 +49,6 @@ class CheckoutHistoryScreen extends Component {
       // The screen is focused
       // Call any action
     });
-    const products = [];
-    const {itemdata, productQty, type} = this.props.route.params;
-    if (type == 'Buy') {
-      products.push({
-        itemname: itemdata.title,
-        images: itemdata.images[0].src,
-        quantity: productQty,
-      });
-    } else {
-      this.props.cartList.map((item) => {
-        products.push({
-          itemname: item.data.title,
-          images: item.data.images[0].src,
-          quantity: item.count,
-        });
-      });
-    }
-    this.setState({cartItems: products});
-    console.warn(products);
   }
 
   componentWillUnmount() {
@@ -140,7 +121,7 @@ class CheckoutHistoryScreen extends Component {
                         Order Ref.
                       </Text>
                       <Text style={[TTComDB18, {marginVertical: 5}]}>
-                        {this.props.route.params.orderRef}
+                        #123456
                       </Text>
                     </View>
 
